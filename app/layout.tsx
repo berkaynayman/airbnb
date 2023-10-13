@@ -9,6 +9,7 @@ import RentModal from './components/modals/RentModal';
 
 import ToasterProvider from './providers/ToasterProvider';
 import getCurrentUser from './actions/getCurrentUser';
+import ClientOnly from './components/ClientOnly';
 
 export const metadata = {
   title: 'Airbnb - Berkay Nayman',
@@ -29,12 +30,16 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider />
-        <RentModal />
-        <LoginModal />
-        <RegisterModal />
-        <Navbar currentUser={currentUser} />
-        {children}
+        <ClientOnly>
+          <ToasterProvider />
+          <RentModal />
+          <LoginModal />
+          <RegisterModal />
+          <Navbar currentUser={currentUser} />
+          <div className='pb-20 pt-28'>
+            {children}
+          </div>
+        </ClientOnly>
       </body>
     </html>
   )

@@ -1,6 +1,7 @@
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getListingById from "@/app/actions/getListingById";
 import getReservations from "@/app/actions/getReservations";
+import { SafeListing, SafeUser } from "@/app/types";
 
 import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/EmptyState";
@@ -27,7 +28,9 @@ const ListingPage = async ({ params }: { params: IParams }) => {
     return (
         <ClientOnly>
             <ListingClient
-                listing={listing}
+                listing={listing as SafeListing & {
+                    user: SafeUser;
+                }}
                 reservations={reservations}
                 currentUser={currentUser}
             />

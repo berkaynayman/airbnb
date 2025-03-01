@@ -20,8 +20,8 @@ const Input: React.FC<InputProps> = ({
     type = "text",
     disabled,
     formatPrice,
-    required,
     register,
+    required,
     errors
 }) => {
     return (
@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
             <input
                 id={id}
                 disabled={disabled}
-                { ... register(id, { required }) }
+                { ...register(id, { required })}
                 placeholder=" "
                 type={type}
                 className={`

@@ -17,8 +17,8 @@ interface PropertiesClientProps {
     currentUser?: SafeUser | null;
 }
 
-const PropertiesClient: React.FC<TripsClientProps> = ({
-    listings,
+const PropertiesClient: React.FC<PropertiesClientProps> = ({
+    reservations,
     currentUser
 }) => {
     const router = useRouter();
@@ -59,7 +59,7 @@ const PropertiesClient: React.FC<TripsClientProps> = ({
                     gap-8
                 "
             >
-                {listings.map((listing) => (
+                {reservations.map((listing) => (
                     <ListingCard
                         key={listing.id}
                         data={listing}

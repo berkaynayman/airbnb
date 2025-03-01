@@ -55,7 +55,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                     "
                 >
                     <div>Hosted by {user?.name}</div>
-                    <Avatar src={user?.image} />
+                    <Avatar src={user?.image as string} />
                 </div>
                 <div
                     className="
@@ -68,13 +68,13 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                     "
                 >
                     <div>
-                        {guestCount} guests
+                        {guestCount.toString()} guests
                     </div>
                     <div>
-                        {roomCount} rooms
+                        {roomCount.toString()} rooms
                     </div>
                     <div>
-                        {bathroomCount} bathrooms
+                        {bathroomCount.toString()} bathrooms
                     </div>
                 </div>
             </div>

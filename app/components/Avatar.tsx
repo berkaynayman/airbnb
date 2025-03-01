@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 interface AvatarProps {
-    src?: string
+    src?: String
 }
 
 const Avatar: React.FC<AvatarProps> = ({
@@ -15,7 +15,7 @@ const Avatar: React.FC<AvatarProps> = ({
             height="30"
             width="30"
             alt="avatar"
-            src={src || '/images/placeholder.jpg'}
+            src={src as string || '/images/placeholder.jpg'}
         />
     )
 }
